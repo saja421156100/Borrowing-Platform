@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrowing Platform - Incoming Requests</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">📦 Borrowing Platform</a>
+            <div class="d-flex align-items-center">
+                <span class="text-white me-3 small">Welcome, Item Owner</span>
+                <a href="dashboard.html" class="btn btn-outline-light btn-sm">Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container my-5">
+        
+        <!-- Header Section -->
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+            <div>
+                <h2 class="fw-bold mb-1">Incoming Borrowing Requests</h2>
+                <p class="text-muted mb-0">Review requests submitted by other users for your items and approve or reject them individually.</p>
+            </div>
+            <!-- Filter buttons -->
+            <div class="btn-group shadow-sm" role="group">
+                <button type="button" class="btn btn-outline-secondary active btn-sm">All (3)</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm">Pending (2)</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm">Accepted (1)</button>
+            </div>
+        </div>
+
+        <!-- Requests List Container -->
+        <div class="row g-3">
+
+            <!-- Request Item 1 (Pending) -->
+            <div class="col-12">
+                <div class="card shadow-sm border-0 p-3">
+                    <div class="row align-items-center">
+                        <div class="col-md-2 col-3">
+                            <div class="bg-secondary text-white rounded d-flex align-items-center justify-content-center" style="height: 70px;">
+                                <span class="small">Image</span>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-9">
+                            <div class="d-flex align-items-center gap-2 mb-1">
+                                <h5 class="fw-bold mb-0">Professional DSLR Camera</h5>
+                                <span class="badge bg-warning text-dark">Pending</span>
+                            </div>
+                            <p class="text-muted small mb-1">Requested by: <strong>Ahmed Mohamed</strong></p>
+                            <p class="text-muted small mb-0">Requested Period: 25 Aug 2026 - 30 Aug 2026</p>
+                        </div>
+                        <div class="col-md-3 text-md-end mt-3 mt-md-0">
+                            <div class="d-flex gap-2 justify-content-md-end">
+                                <button onclick="updateRequestStatus(this, 'rejected')" class="btn btn-outline-danger btn-sm px-3">Reject</button>
+                                <button onclick="updateRequestStatus(this, 'accepted')" class="btn btn-success btn-sm px-3">Accept</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Request Item 2 (Pending) -->
+            <div class="col-12">
+                <div class="card shadow-sm border-0 p-3">
+                    <div class="row align-items-center">
+                        <div class="col-md-2 col-3">
+                            <div class="bg-secondary text-white rounded d-flex align-items-center justify-content-center" style="height: 70px;">
+                                <span class="small">Image</span>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-9">
+                            <div class="d-flex align-items-center gap-2 mb-1">
+                                <h5 class="fw-bold mb-0">Camping Tent (4-Person)</h5>
+                                <span class="badge bg-warning text-dark">Pending</span>
+                            </div>
+                            <p class="text-muted small mb-1">Requested by: <strong>Sara Ahmed</strong></p>
+                            <p class="text-muted small mb-0">Requested Period: 01 Sep 2026 - 05 Sep 2026</p>
+                        </div>
+                        <div class="col-md-3 text-md-end mt-3 mt-md-0">
+                            <div class="d-flex gap-2 justify-content-md-end">
+                                <button onclick="updateRequestStatus(this, 'rejected')" class="btn btn-outline-danger btn-sm px-3">Reject</button>
+                                <button onclick="updateRequestStatus(this, 'accepted')" class="btn btn-success btn-sm px-3">Accept</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Request Item 3 (Accepted Example) -->
+            <div class="col-12">
+                <div class="card shadow-sm border-0 p-3 opacity-75">
+                    <div class="row align-items-center">
+                        <div class="col-md-2 col-3">
+                            <div class="bg-secondary text-white rounded d-flex align-items-center justify-content-center" style="height: 70px;">
+                                <span class="small">Image</span>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-9">
+                            <div class="d-flex align-items-center gap-2 mb-1">
+                                <h5 class="fw-bold mb-0">Electric Drill Set</h5>
+                                <span class="badge bg-success">Accepted</span>
+                            </div>
+                            <p class="text-muted small mb-1">Requested by: <strong>Khaled Omar</strong></p>
+                            <p class="text-muted small mb-0">Requested Period: 10 Aug 2026 - 15 Aug 2026</p>
+                        </div>
+                        <div class="col-md-3 text-md-end mt-3 mt-md-0">
+                            <span class="badge bg-light text-success border border-success p-2">Approved Successfully</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Simple JS to handle status change interactively -->
+    <script>
+        function updateRequestStatus(button, status) {
+            const card = button.closest('.card');
+            const badge = card.querySelector('.badge');
+            const actionContainer = button.parentElement;
+
+            if (status === 'accepted') {
+                badge.className = "badge bg-success";
+                badge.textContent = "Accepted";
+                actionContainer.innerHTML = '<span class="badge bg-light text-success border border-success p-2">Approved Successfully</span>';
+            } else {
+                badge.className = "badge bg-danger";
+                badge.textContent = "Rejected";
+                actionContainer.innerHTML = '<span class="badge bg-light text-danger border border-danger p-2">Request Rejected</span>';
+            }
+        }
+    </script>
+
+    <!-- Bootstrap 5 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
