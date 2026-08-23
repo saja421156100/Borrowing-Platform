@@ -10,22 +10,41 @@ A web-based item sharing and borrowing platform that allows users to lend items 
 
 ---
 
-## 🛠️ Technologies Used
-* **Backend:** PHP, Laravel (RESTful API Architecture)
-* **Database:** MySQL, Eloquent ORM
-* **Authentication:** JWT (JSON Web Token) via `tymon/jwt-auth`
-* **Frontend:** HTML, CSS, JavaScript, Bootstrap / Blade
-* **API Testing & Documentation:** Postman / Thunder Client, Swagger / OpenAPI
+## 📌 Problem Statement & Solution
+
+### ❌ The Problem
+Many people need certain items only for a short period (such as cameras, tools, books, camping equipment, or electronic devices). Purchasing these items can be expensive and unnecessary when needed temporarily. At the same time, many people own items that they rarely use and leave unused for long periods. Without a centralized platform, it is difficult to find, request, track, and build trust regarding borrowed items.
+
+### ✅ The Solution
+The **Borrowing Platform** solves this problem by connecting item owners with people who need items temporarily. The platform organizes the entire borrowing lifecycle—from searching and requesting an item, managing availability and dates, to returning it and reviewing the users involved.
 
 ---
 
-## ⚙️ Installation & Setup (For Local Development)
+## 📂 Repository Structure
 
-To get a copy of the project up and running on your local machine, follow these steps:
-
-### 1. Clone the Repository
-```bash
-git clone [https://github.com/YOUR_USERNAME/borrowing-platform.git](https://github.com/YOUR_USERNAME/borrowing-platform.git)
+```text
+borrowing-platform/
+│
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/        # API Controllers (Auth, Item, Request, Review, etc.)
+│   │   ├── Middleware/         # Custom middleware (JWT Authentication, etc.)
+│   │   └── Requests/           # Form Request validation classes
+│   ├── Models/                 # Eloquent Models (User, Item, Category, BorrowingRequest, Borrowing, Review)
+│   └── ...
+│
+├── database/
+│   └── migrations/             # Database migration files for all tables
+│
+├── routes/
+│   └── api.php                 # RESTful API routes configuration
+│
+├── tests/                      # Unit and Feature tests
+│
+├── .env.example                # Environment configuration template
+├── composer.json               # PHP dependencies and project configuration
+└── README.md                   # Project documentation
+🛠️ Technologies UsedBackend: PHP, Laravel (RESTful API Architecture)Database: MySQL, Eloquent ORMAuthentication: JWT (JSON Web Token) via tymon/jwt-authFrontend: HTML, CSS, JavaScript, Bootstrap / BladeAPI Testing & Documentation: Postman / Thunder Client, Swagger / OpenAPI⚙️ Installation & Setup (For Local Development)To get a copy of the project up and running on your local machine, follow these steps:1. Clone the RepositoryBashgit clone [https://github.com/YOUR_USERNAME/borrowing-platform.git](https://github.com/YOUR_USERNAME/borrowing-platform.git)
 cd borrowing-platform
 2. Install PHP DependenciesBashcomposer install
 3. Environment ConfigurationCopy the example environment file and configure your database settings:Bashcp .env.example .env
@@ -39,4 +58,4 @@ DB_PASSWORD=
 php artisan jwt:secret
 5. Run Database MigrationsRun the migrations to create the required tables (users, categories, items, borrowing_requests, borrowings, reviews):Bashphp artisan migrate
 6. Run the ApplicationStart the local development server:Bashphp artisan serve
-The API will be available at http://127.0.0.1:8000/api/v1/.📌 Main API Endpoints SummaryFeatureMethodEndpointRegisterPOST/api/v1/auth/registerLoginPOST/api/v1/auth/loginGet ProfileGET/api/v1/auth/meGet All ItemsGET/api/v1/itemsCreate ItemPOST/api/v1/items (Auth)Borrow RequestPOST/api/v1/requests (Auth)# Borrowing-Platform
+The API will be available at http://127.0.0.1:8000/api/v1/.📌 Main API Endpoints SummaryFeatureMethodEndpointAuth RequiredRegisterPOST/api/v1/auth/registerNoLoginPOST/api/v1/auth/loginNoGet ProfileGET/api/v1/auth/meYes (JWT)Get All ItemsGET/api/v1/itemsNoCreate ItemPOST/api/v1/itemsYes (JWT)Borrow RequestPOST/api/v1/requestsYes (JWT)SummaryFeatureMethodEndpointRegisterPOST/api/v1/auth/registerLoginPOST/api/v1/auth/loginGet ProfileGET/api/v1/auth/meGet All ItemsGET/api/v1/itemsCreate ItemPOST/api/v1/items (Auth)Borrow RequestPOST/api/v1/requests (Auth)# Borrowing-Platform
