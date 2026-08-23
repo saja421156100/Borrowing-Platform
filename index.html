@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrowing Platform - Browse Items</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">📦 Borrowing Platform</a>
+            <div class="d-flex">
+                <a href="#" class="btn btn-outline-light btn-sm me-2">Login</a>
+                <a href="#" class="btn btn-primary btn-sm">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <!-- Page Title & Search Bar -->
+        <div class="row mb-4 align-items-center">
+            <div class="col-md-6">
+                <h2>Available Items for Borrowing</h2>
+                <p class="text-muted">Find items you need temporarily from people near you.</p>
+            </div>
+            <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Search for cameras, books, tools...">
+            </div>
+        </div>
+
+        <!-- Items Grid -->
+        <div class="row g-4">
+            <!-- Sample Item Card 1 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 200px;">
+                        <span>Item Image Placeholder</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="badge bg-success mb-2">Available</span>
+                        <h5 class="card-title">Professional DSLR Camera</h5>
+                        <p class="card-text text-muted small">Canon EOS 80D with 18-55mm lens, perfect for short photography projects.</p>
+                        <p class="fw-bold text-primary mb-3">Condition: Like New</p>
+                        <a href="#" class="btn btn-outline-dark w-100">View Details & Request</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sample Item Card 2 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 200px;">
+                        <span>Item Image Placeholder</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="badge bg-success mb-2">Available</span>
+                        <h5 class="card-title">Camping Tent (4-Person)</h5>
+                        <p class="card-text text-muted small">Waterproof camping tent, used only twice. Great for weekend trips.</p>
+                        <p class="fw-bold text-primary mb-3">Condition: Good</p>
+                        <a href="#" class="btn btn-outline-dark w-100">View Details & Request</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sample Item Card 3 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 200px;">
+                        <span>Item Image Placeholder</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="badge bg-danger mb-2">Borrowed</span>
+                        <h5 class="card-title">Electric Drill Set</h5>
+                        <p class="card-text text-muted small">Heavy-duty cordless drill with multiple bits for home improvements.</p>
+                        <p class="fw-bold text-primary mb-3">Condition: Excellent</p>
+                        <a href="#" class="btn btn-outline-secondary w-100 disabled">Not Available</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
