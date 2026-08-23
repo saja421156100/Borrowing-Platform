@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrowing Platform - Item Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .bg-indigo { background-color: #4f46e5 !important; }
+        .btn-indigo { background-color: #4f46e5; color: #fff; border: none; }
+        .btn-indigo:hover { background-color: #4338ca; color: #fff; }
+        .text-indigo { color: #4f46e5 !important; }
+        .nav-link.active { font-weight: bold; color: #4f46e5 !important; }
+    </style>
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg navbar-white bg-white shadow-sm border-bottom fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-indigo" href="index.html">📦 Borrowing Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto align-items-center gap-2">
+                    <li class="nav-item"><a class="nav-link text-secondary" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="add-item.html">Add Item</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="incoming-requests.html">Incoming Requests</a></li>
+                </ul>
+                <ul class="navbar-nav align-items-center gap-2">
+                    <li class="nav-item"><a class="btn btn-outline-secondary btn-sm px-3" href="login.html">Login</a></li>
+                    <li class="nav-item"><a class="btn btn-indigo btn-sm px-3" href="register.html">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow-1 pt-5 mt-4">
+        <div class="container my-5">
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
+                        <div class="bg-secondary bg-opacity-25 text-dark d-flex align-items-center justify-content-center" style="height: 380px;">
+                            <span class="fs-5 text-muted">Item Main Image Placeholder</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <span class="badge bg-success mb-2 px-3 py-2">Available</span>
+                    <h1 class="fw-bold mb-3">Professional DSLR Camera</h1>
+                    <h4 class="text-indigo mb-3">Condition: Like New</h4>
+                    <p class="text-muted mb-4">
+                        Canon EOS 80D with 18-55mm lens, ideal for short photography projects, events, and trips. Clean and fully tested.
+                    </p>
+                    <hr>
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="bg-indigo text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                            <span class="fw-bold">OS</span>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-bold">Owner: Osama Al-Najjar</h6>
+                            <small class="text-muted">Member since 2026 • Rating: ⭐ 4.8 / 5</small>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="card bg-white border-0 shadow-sm p-4 rounded-4">
+                        <h5 class="fw-bold mb-3">Request to Borrow This Item</h5>
+                        <form onsubmit="alert('Borrow request submitted successfully!'); event.preventDefault(); window.location.href='dashboard.html';">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="startDate" class="form-label small fw-bold">Start Date</label>
+                                    <input type="date" class="form-control" id="startDate" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="endDate" class="form-label small fw-bold">End Date</label>
+                                    <input type="date" class="form-control" id="endDate" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label small fw-bold">Optional Message to Owner</label>
+                                <textarea class="form-control" id="message" rows="2" placeholder="Hi, I need this camera for a weekend project..."></textarea>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-indigo btn-lg">Submit Borrowing Request</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white text-dark text-center py-3 mt-auto border-top">
+        <div class="container">
+            <p class="mb-0 small text-muted">&copy; 2026 Borrowing Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
