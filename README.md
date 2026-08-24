@@ -3,8 +3,8 @@
 A web-based item sharing and borrowing platform that allows users to lend items they own and do not regularly use to other users who need them for a limited period of time.
 
 ## 🚀 Project Team
-* **Sara Mema** (Frontend & Documentation)
-* **Saja Al-Najjar** (Backend & Database)
+* **Sara Mema** (Backend & Documentation)
+* **Saja Al-Najjar** (Frontend & Database)
 * **Hadeel Al-Nakhala** (Borrowing Logic & Testing)
 * **Supervised By:** ENG. Nesma Lubbad
 
