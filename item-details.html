@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body>
+<body class="min-h-screen flex flex-col bg-gray-50 pt-16">
 
 <div id="navbar"></div>
 
@@ -258,6 +258,21 @@ document.getElementById("itemDetails").innerHTML = `
 `;
 
 </script>
+    <div id="footer"></div>
 
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/components.js"></script>
+
+    <script>
+        document.getElementById("navbar").innerHTML = navbar();
+        document.getElementById("footer").innerHTML = footer();
+
+        document.getElementById("categories").innerHTML =
+            BORROWLY_CATEGORIES.map(categoryCard).join("");
+
+        document.getElementById("popularItems").innerHTML =
+            BORROWLY_ITEMS.slice(0, 4).map(itemCard).join("");
+    </script>
 </body>
 </html>
