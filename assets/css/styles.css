@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    color: #172033;
+    background: #f8f8fc;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #7038f5, #a66cff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-gradient {
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(112, 56, 245, .14),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(166, 108, 255, .12),
+            transparent 30%
+        ),
+        linear-gradient(135deg, #faf9ff, #f1ecff);
+}
+
+.admin-sidebar {
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(112, 56, 245, .25),
+            transparent 30%
+        ),
+        #071d3a;
+}
+
+.item-card-image {
+    transition: transform .35s ease;
+}
+
+.item-card:hover .item-card-image {
+    transform: scale(1.05);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+    scrollbar-width: none;
+}
+
+.fade-in {
+    animation: fadeIn .25s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mobile-menu {
+    transition: transform .25s ease;
+}
+
+.mobile-menu.closed {
+    transform: translateX(-100%);
+}
+
+.line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Notifications — Borrowly</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                violet: {
+                    50: "#f5f1ff",
+                    500: "#7038f5",
+                    600: "#5e22e7"
+                }
+            }
+        }
+    }
+}
+</script>
+
+<link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body>
+
+<div id="navbar"></div>
+
+<main class="mx-auto max-w-4xl px-4 py-8 sm:px-6">
+
+<h1 class="text-3xl font-extrabold">
+    Notifications
+</h1>
+
+<p class="mt-2 text-sm text-gray-500">
+    Stay up to date with your Borrowly activity.
+</p>
+
+
+<div class="mt-7 overflow-hidden rounded-2xl bg-white shadow-sm">
+
+    <div class="flex gap-4 border-b p-5">
+
+        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-50">
+            🔔
+        </div>
+
+        <div class="flex-1">
+
+            <p class="text-sm font-bold">
+                New borrow request
+            </p>
+
+            <p class="mt-1 text-sm text-gray-500">
+                Omar Khan requested your Camping Tent 4P.
+            </p>
+
+            <p class="mt-2 text-[11px] text-gray-400">
+                10 minutes ago
+            </p>
+
+        </div>
+
+        <span class="h-2 w-2 rounded-full bg-violet-600"></span>
+
+    </div>
+
+
+    <div class="flex gap-4 border-b p-5">
+
+        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50">
+            ✓
+        </div>
+
+        <div class="flex-1">
+
+            <p class="text-sm font-bold">
+                Borrowing approved
+            </p>
+
+            <p class="mt-1 text-sm text-gray-500">
+                Your request for the Canon EOS 250D was approved.
+            </p>
+
+            <p class="mt-2 text-[11px] text-gray-400">
+                1 hour ago
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="flex gap-4 border-b p-5">
+
+        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50">
+            📦
+        </div>
+
+        <div class="flex-1">
+
+            <p class="text-sm font-bold">
+                Item returned
+            </p>
+
+            <p class="mt-1 text-sm text-gray-500">
+                Power Drill has been marked as returned.
+            </p>
+
+            <p class="mt-2 text-[11px] text-gray-400">
+                Yesterday
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="flex gap-4 p-5">
+
+        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50">
+            ★
+        </div>
+
+        <div class="flex-1">
+
+            <p class="text-sm font-bold">
+                Welcome to Borrowly
+            </p>
+
+            <p class="mt-1 text-sm text-gray-500">
+                Complete your profile to build trust with the community.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</main>
+
+<script src="assets/js/components.js"></script>
+
+<script>
+document.getElementById("navbar").innerHTML = navbar();
+</script>
+
+</body>
+</html>

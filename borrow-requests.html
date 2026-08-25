@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Borrow Requests — Borrowly</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                violet: {
+                    50: "#f5f1ff",
+                    500: "#7038f5",
+                    600: "#5e22e7"
+                }
+            }
+        }
+    }
+}
+</script>
+
+<link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body>
+
+<div id="navbar"></div>
+
+<main class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+
+<h1 class="text-3xl font-extrabold">
+    Borrow Requests
+</h1>
+
+<p class="mt-2 text-sm text-gray-500">
+    Review requests from people who want to borrow your items.
+</p>
+
+
+<div class="mt-7 space-y-3">
+
+    <div class="flex flex-col gap-5 rounded-2xl bg-white p-5 shadow-sm md:flex-row md:items-center">
+
+        ${avatar("Ahmad Nabil")}
+
+        <div class="flex-1">
+
+            <p class="text-sm font-bold">
+                Ahmad Nabil wants to borrow
+                <span class="text-violet-600">
+                    Canon EOS 250D
+                </span>
+            </p>
+
+            <p class="mt-1 text-xs text-gray-400">
+                May 25 – May 28
+            </p>
+
+        </div>
+
+        ${statusBadge("Pending")}
+
+        <div class="flex gap-2">
+
+            <button
+                onclick="openModal('Request approved','The borrower has been notified.')"
+                class="rounded-xl bg-violet-600 px-4 py-2 text-xs font-bold text-white">
+                Approve
+            </button>
+
+            <button
+                class="rounded-xl border border-gray-200 px-4 py-2 text-xs font-semibold">
+                Decline
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="flex flex-col gap-5 rounded-2xl bg-white p-5 shadow-sm md:flex-row md:items-center">
+
+        ${avatar("Omar Khan")}
+
+        <div class="flex-1">
+
+            <p class="text-sm font-bold">
+                Omar Khan wants to borrow
+                <span class="text-violet-600">
+                    Power Drill
+                </span>
+            </p>
+
+            <p class="mt-1 text-xs text-gray-400">
+                June 1 – June 3
+            </p>
+
+        </div>
+
+        ${statusBadge("Approved")}
+
+    </div>
+
+</div>
+
+</main>
+
+<script src="assets/js/components.js"></script>
+<script src="assets/js/app.js"></script>
+
+<script>
+document.getElementById("navbar").innerHTML = navbar();
+</script>
+
+</body>
+</html>

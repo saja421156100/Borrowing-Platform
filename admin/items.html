@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Items — Borrowly</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                violet: {
+                    50: "#f5f1ff",
+                    500: "#7038f5",
+                    600: "#5e22e7"
+                }
+            }
+        }
+    }
+}
+</script>
+
+<link rel="stylesheet" href="../assets/css/styles.css">
+
+</head>
+
+<body>
+
+<div class="flex min-h-screen">
+
+<div id="sidebar"></div>
+
+<div class="min-w-0 flex-1">
+
+<div id="header"></div>
+
+<main class="p-4 sm:p-6 lg:p-8">
+
+<div class="flex flex-col justify-between gap-4 sm:flex-row">
+
+<div>
+<h1 class="text-2xl font-extrabold">
+Items
+</h1>
+
+<p class="mt-1 text-xs text-gray-400">
+Manage marketplace items.
+</p>
+</div>
+
+<button class="rounded-xl bg-violet-600 px-5 py-3 text-xs font-bold text-white">
++ Add Item
+</button>
+
+</div>
+
+
+<input
+    placeholder="Search items..."
+    class="mt-6 w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm sm:max-w-md"
+>
+
+
+<div class="mt-6 overflow-hidden rounded-2xl bg-white shadow-sm">
+
+<div class="overflow-x-auto">
+
+<table class="w-full min-w-[850px]">
+
+<thead class="bg-gray-50">
+
+<tr>
+
+<th class="px-5 py-4 text-left text-xs text-gray-400">
+ID
+</th>
+
+<th class="px-5 py-4 text-left text-xs text-gray-400">
+Item
+</th>
+
+<th class="px-5 py-4 text-left text-xs text-gray-400">
+Owner
+</th>
+
+<th class="px-5 py-4 text-left text-xs text-gray-400">
+Category
+</th>
+
+<th class="px-5 py-4 text-left text-xs text-gray-400">
+Status
+</th>
+
+<th class="px-5 py-4 text-left text-xs text-gray-400">
+Added
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<script>
+
+document.write(
+BORROWLY_ITEMS.map((item, index) => `
+
+<tr class="border-t">
+
+<td class="px-5 py-4 text-xs">
+#${3560 + item.id}
+</td>
+
+<td class="px-5 py-4">
+
+<div class="flex items-center gap-3">
+
+<img
+src="${item.image}"
+class="h-10 w-10 rounded-lg object-cover"
+>
+
+<span class="text-sm font-semibold">
+${item.name}
+</span>
+
+</div>
+
+</td>
+
+<td class="px-5 py-4 text-xs">
+${item.owner}
+</td>
+
+<td class="px-5 py-4 text-xs">
+${item.category}
+</td>
+
+<td class="px-5 py-4">
+${statusBadge(item.status)}
+</td>
+
+<td class="px-5 py-4 text-xs text-gray-400">
+May ${20 - index}, 2024
+</td>
+
+</tr>
+
+`).join("")
+);
+
+</script>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</main>
+
+</div>
+
+</div>
+
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/components.js"></script>
+
+<script>
+
+document.getElementById("sidebar").innerHTML =
+    adminSidebar();
+
+document.getElementById("header").innerHTML =
+    adminHeader("Items");
+
+</script>
+
+</body>
+</html>
