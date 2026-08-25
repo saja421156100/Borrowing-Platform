@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Item - Borrowly</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7C3AED',
+                        'primary-dark': '#6D28D9'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+
+<body class="bg-gray-50 text-gray-900 min-h-screen">
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="h-16 flex items-center justify-between">
+
+
+                <!-- Logo -->
+
+                <a href="index.html"
+                   class="flex items-center gap-2">
+
+                    <div class="w-9 h-9 rounded-xl
+                                bg-violet-600
+                                flex items-center justify-center
+                                text-white font-bold text-lg">
+
+                        B
+
+                    </div>
+
+                    <span class="text-xl font-bold text-gray-900">
+                        Borrow<span class="text-violet-600">ly</span>
+                    </span>
+
+                </a>
+
+
+                <!-- Desktop Navigation -->
+
+                <div class="hidden md:flex items-center gap-8">
+
+                    <a href="index.html"
+                       class="text-sm font-medium text-gray-600
+                              hover:text-violet-600 transition">
+
+                        Home
+
+                    </a>
+
+                    <a href="browse.html"
+                       class="text-sm font-medium text-gray-600
+                              hover:text-violet-600 transition">
+
+                        Browse
+
+                    </a>
+
+                    <a href="my-items.html"
+                       class="text-sm font-medium text-violet-600">
+
+                        My Items
+
+                    </a>
+
+                    <a href="my-borrowings.html"
+                       class="text-sm font-medium text-gray-600
+                              hover:text-violet-600 transition">
+
+                        My Borrowings
+
+                    </a>
+
+                </div>
+
+
+                <!-- User -->
+
+                <div class="flex items-center gap-3">
+
+                    <a href="notifications.html"
+                       class="hidden sm:flex w-10 h-10 rounded-xl
+                              items-center justify-center
+                              text-gray-500
+                              hover:bg-gray-100 transition">
+
+                        🔔
+
+                    </a>
+
+
+                    <a href="profile.html"
+                       class="flex items-center gap-2">
+
+                        <div class="w-9 h-9 rounded-full
+                                    bg-violet-100
+                                    flex items-center justify-center
+                                    text-violet-700
+                                    font-semibold">
+
+                            A
+
+                        </div>
+
+                        <span class="hidden sm:block
+                                     text-sm font-semibold text-gray-700">
+
+                            Ahmad Nabil
+
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+
+
+        <!-- Breadcrumb -->
+
+        <div class="flex items-center gap-2
+                    text-sm text-gray-500 mb-6">
+
+            <a href="my-items.html"
+               class="hover:text-violet-600 transition">
+
+                My Items
+
+            </a>
+
+            <span>›</span>
+
+            <span class="text-gray-900 font-medium">
+                Add Item
+            </span>
+
+        </div>
+
+
+
+        <!-- Page Header -->
+
+        <div class="mb-8">
+
+            <h1 class="text-3xl sm:text-4xl
+                       font-bold text-gray-900">
+
+                Add a New Item
+
+            </h1>
+
+            <p class="mt-2 text-gray-500">
+
+                Share something you own with the Borrowly community.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =========================
+             FORM CARD
+        ========================== -->
+
+        <div class="bg-white rounded-2xl
+                    border border-gray-100
+                    shadow-sm
+                    p-5 sm:p-8">
+
+
+            <form id="addItemForm"
+                  class="space-y-7">
+
+
+                <!-- =========================
+                     ITEM NAME
+                ========================== -->
+
+                <div>
+
+                    <label
+                        for="itemName"
+                        class="block text-sm font-semibold
+                               text-gray-700 mb-2">
+
+                        Item Name
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="itemName"
+                        name="name"
+                        placeholder="e.g. Canon EOS 90D"
+                        required
+                        class="w-full px-4 py-3
+                               rounded-xl
+                               border border-gray-200
+                               bg-white
+                               text-gray-900
+                               placeholder-gray-400
+                               outline-none
+                               transition
+                               focus:ring-2
+                               focus:ring-violet-500
+                               focus:border-violet-500">
+
+                </div>
+
+
+
+                <!-- =========================
+                     CATEGORY
+                ========================== -->
+
+                <div>
+
+                    <label
+                        for="category"
+                        class="block text-sm font-semibold
+                               text-gray-700 mb-2">
+
+                        Category
+
+                    </label>
+
+
+                    <select
+                        id="category"
+                        name="category"
+                        required
+                        class="w-full px-4 py-3
+                               rounded-xl
+                               border border-gray-200
+                               bg-white
+                               text-gray-700
+                               outline-none
+                               transition
+                               focus:ring-2
+                               focus:ring-violet-500
+                               focus:border-violet-500">
+
+                        <option value="">
+                            Select category
+                        </option>
+
+                        <option value="cameras">
+                            Cameras
+                        </option>
+
+                        <option value="tools">
+                            Tools
+                        </option>
+
+                        <option value="camping">
+                            Camping
+                        </option>
+
+                        <option value="music">
+                            Music
+                        </option>
+
+                        <option value="gaming">
+                            Gaming
+                        </option>
+
+                        <option value="books">
+                            Books
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- =========================
+                     DESCRIPTION
+                ========================== -->
+
+                <div>
+
+                    <label
+                        for="description"
+                        class="block text-sm font-semibold
+                               text-gray-700 mb-2">
+
+                        Description
+
+                    </label>
+
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="5"
+                        required
+                        placeholder="Describe your item, its features, and anything borrowers should know..."
+                        class="w-full px-4 py-3
+                               rounded-xl
+                               border border-gray-200
+                               bg-white
+                               text-gray-900
+                               placeholder-gray-400
+                               outline-none
+                               resize-none
+                               transition
+                               focus:ring-2
+                               focus:ring-violet-500
+                               focus:border-violet-500"></textarea>
+
+
+                    <p class="mt-2 text-xs text-gray-400">
+
+                        Give borrowers enough information to understand your item.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- =========================
+                     CONDITION
+                ========================== -->
+
+                <div>
+
+                    <label
+                        for="condition"
+                        class="block text-sm font-semibold
+                               text-gray-700 mb-2">
+
+                        Condition
+
+                    </label>
+
+
+                    <select
+                        id="condition"
+                        name="condition"
+                        required
+                        class="w-full px-4 py-3
+                               rounded-xl
+                               border border-gray-200
+                               bg-white
+                               text-gray-700
+                               outline-none
+                               transition
+                               focus:ring-2
+                               focus:ring-violet-500
+                               focus:border-violet-500">
+
+                        <option value="excellent">
+                            Excellent
+                        </option>
+
+                        <option value="good">
+                            Good
+                        </option>
+
+                        <option value="fair">
+                            Fair
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- =========================
+                     LOCATION
+                ========================== -->
+
+                <div>
+
+                    <label
+                        for="location"
+                        class="block text-sm font-semibold
+                               text-gray-700 mb-2">
+
+                        Location
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="location"
+                        name="location"
+                        placeholder="e.g. Amman"
+                        required
+                        class="w-full px-4 py-3
+                               rounded-xl
+                               border border-gray-200
+                               bg-white
+                               text-gray-900
+                               placeholder-gray-400
+                               outline-none
+                               transition
+                               focus:ring-2
+                               focus:ring-violet-500
+                               focus:border-violet-500">
+
+                </div>
+
+
+
+                <!-- =========================
+                     DIVIDER
+                ========================== -->
+
+                <div class="border-t border-gray-100 pt-6">
+
+
+                    <!-- =========================
+                         BUTTONS
+                    ========================== -->
+
+                    <div class="flex flex-col-reverse
+                                sm:flex-row
+                                sm:justify-end
+                                gap-3">
+
+
+                        <!-- Cancel -->
+
+                        <a
+                            href="my-items.html"
+                            class="w-full sm:w-auto
+                                   px-6 py-3
+                                   rounded-xl
+                                   border border-gray-200
+                                   bg-white
+                                   text-gray-700
+                                   font-semibold
+                                   text-center
+                                   hover:bg-gray-50
+                                   transition">
+
+                            Cancel
+
+                        </a>
+
+
+                        <!-- Add Item -->
+
+                        <button
+                            type="submit"
+                            class="w-full sm:w-auto
+                                   px-7 py-3
+                                   rounded-xl
+                                   bg-violet-600
+                                   text-white
+                                   font-semibold
+                                   hover:bg-violet-700
+                                   active:bg-violet-800
+                                   transition
+                                   shadow-sm
+                                   shadow-violet-200">
+
+                            Add Item
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+
+        <!-- =========================
+             HELPER TEXT
+        ========================== -->
+
+        <div class="mt-6 flex items-start gap-3
+                    bg-violet-50
+                    border border-violet-100
+                    rounded-xl
+                    p-4">
+
+            <div class="text-violet-600 text-lg">
+                💡
+            </div>
+
+            <div>
+
+                <p class="text-sm font-semibold
+                          text-violet-900">
+
+                    Share responsibly
+
+                </p>
+
+                <p class="text-sm text-violet-700 mt-1">
+
+                    Make sure the item is available and in the
+                    condition you described before listing it.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        const form = document.getElementById("addItemForm");
+
+        form.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const item = {
+
+                name:
+                    document.getElementById("itemName").value,
+
+                category:
+                    document.getElementById("category").value,
+
+                description:
+                    document.getElementById("description").value,
+
+                condition:
+                    document.getElementById("condition").value,
+
+                location:
+                    document.getElementById("location").value
+
+            };
+
+
+            console.log("New Item:", item);
+
+
+            /*
+                Backend/API will be connected later.
+
+                For now we simply show a success message.
+            */
+
+            alert("Item added successfully!");
+
+
+            // Return to My Items
+            window.location.href = "my-items.html";
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
