@@ -1,12 +1,16 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Create Account — Borrowly</title>
 
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
@@ -28,39 +32,71 @@
     </script>
 
     <link rel="stylesheet" href="assets/css/styles.css">
+
 </head>
+
 
 <body>
 
 <main class="hero-gradient min-h-screen">
 
+
     <div class="mx-auto grid min-h-screen max-w-6xl items-center gap-10 px-4 py-8 lg:grid-cols-2">
 
-        <section class="hidden lg:block">
+
+        <!-- ================= LEFT SIDE ================= -->
+
+        <section class="hidden lg:flex flex-col justify-center">
+
+            <!-- Logo -->
 
             <a href="index.html" class="flex items-center gap-2">
+
                 <span class="h-9 w-9 rounded-lg bg-violet-600 text-white flex items-center justify-center font-bold">
                     B
                 </span>
 
-                <span class="font-bold">
+                <span class="font-bold text-lg">
                     Borrowly
                 </span>
+
             </a>
 
-            <div class="mt-20">
+
+            <!-- Borrowing Image -->
+
+            <div class="mt-10 flex justify-center">
+
+                <img
+                    src="assets/images/borrowing.png"
+                    alt="Borrowing and sharing items"
+                    class="w-full max-w-lg object-contain"
+                >
+
+            </div>
+
+
+            <!-- Text below image -->
+
+            <div class="mt-4">
 
                 <p class="font-semibold text-violet-600">
                     Join our community
                 </p>
 
-                <h1 class="mt-3 max-w-md text-5xl font-extrabold leading-tight">
-                    Start sharing & borrowing today
+                <h1 class="mt-2 max-w-md text-4xl font-extrabold leading-tight">
+
+                    Start sharing &
+                    <br>
+                    borrowing today
+
                 </h1>
 
-                <p class="mt-5 max-w-md text-sm leading-6 text-gray-500">
+                <p class="mt-4 max-w-md text-sm leading-6 text-gray-500">
+
                     Create your account and discover amazing items
                     near you.
+
                 </p>
 
             </div>
@@ -68,7 +104,12 @@
         </section>
 
 
+        <!-- ================= RIGHT SIDE ================= -->
+
         <section class="mx-auto w-full max-w-md">
+
+
+            <!-- Mobile Logo -->
 
             <div class="mb-6 flex items-center gap-2 lg:hidden">
 
@@ -86,33 +127,53 @@
             </div>
 
 
+            <!-- Signup Card -->
+
             <div class="rounded-3xl border border-gray-100 bg-white p-6 shadow-xl sm:p-8">
 
+
                 <h2 class="text-2xl font-extrabold">
+
                     Create your account
+
                 </h2>
 
+
                 <p class="mt-2 text-sm text-gray-400">
+
                     Join thousands of people sharing locally.
+
                 </p>
 
 
-                <form class="mt-7"
-                      onsubmit="event.preventDefault(); window.location.href='browse.html';">
+                <form
+                    class="mt-7"
+                    onsubmit="event.preventDefault(); window.location.href='browse.html';"
+                >
+
+
+                    <!-- Full Name -->
 
                     <label class="text-xs font-semibold">
+
                         Full Name
+
                     </label>
 
                     <input
                         required
+                        type="text"
                         class="mt-2 mb-4 w-full rounded-xl border border-gray-200 px-4 py-3 text-sm outline-none focus:border-violet-400"
                         placeholder="Enter your full name"
                     >
 
 
+                    <!-- Email -->
+
                     <label class="text-xs font-semibold">
+
                         Email
+
                     </label>
 
                     <input
@@ -123,18 +184,27 @@
                     >
 
 
+                    <!-- Phone Number -->
+
                     <label class="text-xs font-semibold">
+
                         Phone Number
+
                     </label>
 
                     <input
+                        type="tel"
                         class="mt-2 mb-4 w-full rounded-xl border border-gray-200 px-4 py-3 text-sm outline-none focus:border-violet-400"
                         placeholder="Enter your phone number"
                     >
 
 
+                    <!-- Password -->
+
                     <label class="text-xs font-semibold">
+
                         Password
+
                     </label>
 
                     <input
@@ -145,8 +215,12 @@
                     >
 
 
+                    <!-- Confirm Password -->
+
                     <label class="text-xs font-semibold">
+
                         Confirm Password
+
                     </label>
 
                     <input
@@ -156,6 +230,8 @@
                         placeholder="Confirm your password"
                     >
 
+
+                    <!-- Terms -->
 
                     <label class="flex gap-2 text-xs text-gray-500">
 
@@ -170,23 +246,38 @@
                     </label>
 
 
+                    <!-- Sign Up -->
+
                     <button
                         type="submit"
-                        class="mt-5 w-full rounded-xl bg-violet-600 py-3.5 text-sm font-bold text-white">
+                        class="mt-5 w-full rounded-xl bg-violet-600 py-3.5 text-sm font-bold text-white hover:bg-violet-700 transition"
+                    >
+
                         Sign Up
+
                     </button>
+
 
                 </form>
 
 
+                <!-- Login -->
+
                 <p class="mt-6 text-center text-xs text-gray-400">
+
                     Already have an account?
 
-                    <a href="login.html"
-                       class="font-bold text-violet-600">
+                    <a
+                        href="login.html"
+                        class="font-bold text-violet-600"
+                    >
+
                         Log in
+
                     </a>
+
                 </p>
+
 
             </div>
 
@@ -197,4 +288,6 @@
 </main>
 
 </body>
+
 </html>
+```
