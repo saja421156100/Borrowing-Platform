@@ -79,7 +79,7 @@
     </div>
 
 </main>
-
+<div id="footer"></div>
 <script src="assets/js/data.js"></script>
 <script src="assets/js/components.js"></script>
 <script src="assets/js/app.js"></script>
@@ -94,6 +94,15 @@ document.getElementById("items").innerHTML =
         .join("");
 
 </script>
+    <script>
+        document.getElementById("navbar").innerHTML = navbar();
+        document.getElementById("footer").innerHTML = footer();
 
+        document.getElementById("categories").innerHTML =
+            BORROWLY_CATEGORIES.map(categoryCard).join("");
+
+        document.getElementById("popularItems").innerHTML =
+            BORROWLY_ITEMS.slice(0, 4).map(itemCard).join("");
+    </script>
 </body>
 </html>
