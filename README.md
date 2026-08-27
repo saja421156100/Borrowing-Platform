@@ -44,7 +44,15 @@ borrowing-platform/
 ├── .env.example                # Environment configuration template
 ├── composer.json               # PHP dependencies and project configuration
 └── README.md                   # Project documentation
-🛠️ Technologies UsedBackend: PHP, Laravel (RESTful API Architecture)Database: MySQL, Eloquent ORMAuthentication: JWT (JSON Web Token) via tymon/jwt-authFrontend: HTML, CSS, JavaScript, Bootstrap / BladeAPI Testing & Documentation: Postman / Thunder Client, Swagger / OpenAPI⚙️ Installation & Setup (For Local Development)To get a copy of the project up and running on your local machine, follow these steps:1. Clone the RepositoryBashgit clone [https://github.com/YOUR_USERNAME/borrowing-platform.git](https://github.com/YOUR_USERNAME/borrowing-platform.git)
+
+🛠️ Technologies UsedBackend:
+PHP, Laravel (RESTful API Architecture)Database: MySQL, Eloquent ORMAuthentication: JWT (JSON Web Token) via tymon/jwt-authFrontend: HTML, CSS, JavaScript, Bootstrap / BladeAPI
+
+Testing & Documentation:
+Postman / Thunder Client, Swagger / OpenAPI⚙️ Installation & Setup (For Local Development)
+
+To get a copy of the project up and running on your local machine, follow these steps:
+1. Clone the RepositoryBashgit clone [https://github.com/YOUR_USERNAME/borrowing-platform.git](https://github.com/YOUR_USERNAME/borrowing-platform.git)
 cd borrowing-platform
 2. Install PHP DependenciesBashcomposer install
 3. Environment ConfigurationCopy the example environment file and configure your database settings:Bashcp .env.example .env
