@@ -1,168 +1,183 @@
 # Borrowly
 
-Borrowly is a full-stack web platform that allows users to share and borrow useful items from each other for free.
+**Borrowly** is a full-stack web platform that allows users to share and borrow useful items from each other for free.
 
-The platform helps users find items they need temporarily instead of buying them, while encouraging community sharing and reducing waste.
+The main goal of the platform is to encourage community sharing, reduce unnecessary purchases, and make better use of items that are not used all the time.
 
-## Main Features
+---
 
-- User registration and login
-- JWT authentication
-- User profile management
-- Add, edit, and delete items
-- Upload item images
-- Browse and search items
-- Filter items by category and status
+## Features
+
+- User Registration and Login
+- JWT Authentication
+- User Profile Management
+- Add, Edit, and Delete Items
+- Upload Item Images
+- Browse and Search Items
+- Filter Items by Category and Status
 - Favorites
-- Borrowing requests
-- Approve and reject requests
-- Confirm item receiving and returning
-- Reviews and ratings
+- Borrowing Requests
+- Approve and Reject Requests
+- Confirm Item Receiving
+- Confirm Item Return
+- Reviews and Ratings
 - Notifications
-- Messages between borrowers and owners
+- Messages and Chat
 - Reports
 - Admin Dashboard
-- User, item, category, borrowing, and report management
+
+---
 
 ## Borrowing Process
 
-The borrowing lifecycle is:
+**Pending**  
+↓  
+**Approved / Rejected**  
+↓  
+**Confirm Received**  
+↓  
+**Borrowed**  
+↓  
+**Confirm Return**  
+↓  
+**Returned**  
+↓  
+**Review & Rating**
 
-```text
-Pending
-   ↓
-Approved / Rejected
-   ↓
-Confirm Received
-   ↓
-Borrowed
-   ↓
-Confirm Return
-   ↓
-Returned
+---
 
-   ↓
+## Technologies Used
 
+### Frontend
 
+- HTML
+- CSS
+- JavaScript
 
+### Backend
 
+- PHP
+- Laravel
+- REST API
 
-Technologies Used
-Frontend
-HTML
-CSS
-JavaScript
-Backend
-PHP
-Laravel
-REST API
-Database
-MySQL
-Authentication
-JWT Authentication
-Project Structure
-Borrowing-Platform/
-│
-├── backend/
-│   ├── app/
-│   ├── database/
-│   ├── routes/
-│   ├── storage/
-│   └── composer.json
-│
-├── frontend/
-│   ├── admin/
-│   ├── assets/
-│   ├── index.html
-│   ├── login.html
-│   ├── signup.html
-│   ├── browse.html
-│   ├── item-details.html
-│   ├── my-items.html
-│   ├── my-borrowings.html
-│   ├── favorites.html
-│   ├── notifications.html
-│   ├── messages.html
-│   └── profile.html
-│
-└── README.md
-Installation
-1. Clone the repository
-git clone https://github.com/saja421156100/Borrowing-Platform.git
-2. Open the backend
-cd Borrowing-Platform/backend
-3. Install dependencies
-composer install
-4. Create the environment file
+### Database
 
-Copy:
+- MySQL
 
-.env.example
+### Authentication
 
-and rename it to:
+- JWT Authentication
 
-.env
+---
 
-Configure your MySQL database inside .env.
+## Admin Dashboard
 
-Example:
+The Admin Dashboard allows administrators to:
 
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=borrowly
-DB_USERNAME=root
-DB_PASSWORD=
+- View platform statistics
+- Manage users
+- Manage items
+- Manage categories
+- Monitor borrowings
+- View reports
+- Monitor reviews
 
-APP_URL=http://127.0.0.1:8000
-5. Generate application keys
-php artisan key:generate
-php artisan jwt:secret
-6. Run migrations
-php artisan migrate
-7. Create the storage link
-php artisan storage:link
-8. Run the backend
-php artisan serve --host=127.0.0.1 --port=8000
-9. Run the frontend
+---
 
-Open another terminal:
+## Installation
 
-cd frontend
-php -S 127.0.0.1:5500
+### 1. Clone the repository
 
-Then open:
+`git clone https://github.com/saja421156100/Borrowing-Platform.git`
 
-http://127.0.0.1:5500
-Admin Account
+### 2. Open the backend folder
 
-Register a normal account first.
+`cd Borrowing-Platform/backend`
+
+### 3. Install dependencies
+
+`composer install`
+
+### 4. Create the environment file
+
+Copy `.env.example` and rename the copy to `.env`.
+
+Configure the MySQL database inside the `.env` file.
+
+### 5. Generate the application key
+
+`php artisan key:generate`
+
+### 6. Generate the JWT secret
+
+`php artisan jwt:secret`
+
+### 7. Run migrations
+
+`php artisan migrate`
+
+### 8. Create the storage link
+
+`php artisan storage:link`
+
+### 9. Run the backend
+
+`php artisan serve --host=127.0.0.1 --port=8000`
+
+### 10. Run the frontend
+
+Open another terminal and go to the frontend folder:
+
+`cd frontend`
 
 Then run:
 
-php artisan tinker
+`php -S 127.0.0.1:5500`
 
-Inside Tinker:
+Open the application at:
 
-App\Models\User::where('email', 'your-email@example.com')
-    ->update(['role' => 'admin']);
+`http://127.0.0.1:5500`
 
-Log out and log in again to access the Admin Dashboard.
+---
 
-Important Note
+## Admin Account
 
-Borrowly is a free borrowing platform.
+First, register a normal user account.
+
+Then run:
+
+`php artisan tinker`
+
+Inside Tinker, use:
+
+`App\Models\User::where('email', 'your-email@example.com')->update(['role' => 'admin']);`
+
+Log out and log in again.
+
+The **Admin** option will appear in the navigation bar.
+
+---
+
+## Important Note
+
+Borrowly is a **free borrowing platform**.
 
 There are no payments or rental fees in the current version.
 
-Future Improvements
+---
 
-Possible future improvements include:
+## Future Improvements
 
-Mobile application
-Real-time chat
-Maps and location services
-Email and push notifications
-User verification
-Advanced recommendations
-Cloud deploymentReview & Rating
+- Mobile Application
+- Real-Time Chat
+- Maps and Location Services
+- Email and Push Notifications
+- User Verification
+- Advanced Recommendations
+- Cloud Deployment
+
+---
+
+## Repository
+
+**GitHub:** https://github.com/saja421156100/Borrowing-Platform
