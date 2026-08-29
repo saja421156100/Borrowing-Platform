@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login — Borrowly</title>
+
+
+    <!-- Tailwind CSS -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <script>
+
+        tailwind.config = {
+
+            theme: {
+
+                extend: {
+
+                    colors: {
+
+                        violet: {
+
+                            50: "#f5f1ff",
+                            100: "#ebe3ff",
+                            500: "#7038f5",
+                            600: "#5e22e7",
+                            700: "#4d18c2"
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+
+    <!-- Additional styling -->
+
+
+</head>
+
+
+<body>
+
+
+<main class="login-background">
+
+
+    <div class="main-container">
+
+
+        <div
+            class="desktop-layout grid grid-cols-2 items-center gap-16"
+        >
+
+
+            <!-- ================================= -->
+            <!-- LEFT SIDE -->
+            <!-- ================================= -->
+
+            <section class="left-side">
+
+
+                <!-- Logo -->
+
+                <a
+                    href="index.html"
+                    class="logo"
+                >
+
+                    <span class="logo-box">
+                        B
+                    </span>
+
+                    <span>
+                        Borrowly
+                    </span>
+
+                </a>
+
+
+
+
+
+                <!-- Welcome Text -->
+
+                <div class="welcome-text">
+
+
+                    <p class="welcome-small">
+
+                        Welcome back!
+
+                    </p>
+
+
+                    <h1 class="welcome-title">
+
+                        Glad to see
+                        <br>
+                        you again
+
+                    </h1>
+
+
+                    <p class="welcome-description">
+
+                        Log in to your account and continue
+                        your borrowing journey.
+
+                    </p>
+
+
+                </div>
+
+                <!-- Borrowing Image -->
+
+                <div class="image-container">
+
+                    <img
+                        src="assets/images/borrowing-image.png"
+                        alt="Borrowing and sharing items"
+                        class="borrowing-image"
+                    >
+
+                </div>
+            </section>
+
+
+
+            <!-- ================================= -->
+            <!-- RIGHT SIDE -->
+            <!-- ================================= -->
+
+            <section class="right-side">
+
+
+                <!-- Login Card -->
+
+                <div class="login-card">
+
+
+                    <h2 class="login-title">
+
+                        Log in to your account
+
+                    </h2>
+
+
+                    <p class="login-subtitle">
+
+                        Welcome back to Borrowly.
+
+                    </p>
+
+
+
+                    <!-- Form -->
+
+                    <form
+                        id="loginForm"
+                        class="form-area"
+                    >
+
+
+                        <!-- Email -->
+
+                        <label class="form-label">
+
+                            Email
+
+                        </label>
+
+
+                        <input
+                            id="loginEmail"
+                            required
+                            type="email"
+                            class="form-input"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                        >
+
+
+
+                        <!-- Password -->
+
+                        <div class="password-area">
+
+                            <label class="form-label">
+
+                                Password
+
+                            </label>
+
+
+                            <input
+                                id="loginPassword"
+                                required
+                                type="password"
+                                class="form-input"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                            >
+
+                        </div>
+
+
+
+                        <!-- Options -->
+
+                        <div class="login-options">
+
+
+                            <label class="remember">
+
+                                <input
+                                    id="rememberMe"
+                                    type="checkbox"
+                                >
+
+                                <span>
+                                    Remember me
+                                </span>
+
+                            </label>
+
+
+
+
+
+                        </div>
+
+
+
+                        <div
+                            id="loginError"
+                            class="hidden mt-4 rounded-xl border border-red-100 bg-red-50 px-4 py-3 text-sm text-red-600"
+                            role="alert"
+                        ></div>
+
+                        <!-- Login Button -->
+
+                        <button
+                            id="loginSubmit"
+                            type="submit"
+                            class="login-button disabled:cursor-not-allowed disabled:opacity-60"
+                        >
+
+                            Log in
+
+                        </button>
+
+
+                    </form>
+
+
+
+                    <!-- Sign Up -->
+
+                    <p class="signup-text">
+
+                        Don't have an account?
+
+                        <a
+                            href="signup.html"
+                            class="signup-link"
+                        >
+
+                            Sign up
+
+                        </a>
+
+                    </p>
+
+
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+
+        <!-- ================================= -->
+        <!-- MOBILE LOGO -->
+        <!-- ================================= -->
+
+        <div class="mobile-logo">
+
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+
+                <span class="logo-box">
+
+                    B
+
+                </span>
+
+                Borrowly
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</main>
+
+<script src="assets/js/app.js"></script>
+<script>
+setupLogin();
+</script>
+
+</body>
+
+</html>

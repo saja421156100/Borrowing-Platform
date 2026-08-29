@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Borrowings — Borrowly</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{violet:{50:'#f5f1ff',500:'#7038f5',600:'#5e22e7',700:'#4d18c2'}}}}}</script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="bg-gray-50">
+<div class="flex min-h-screen"><div id="sidebar"></div><div class="min-w-0 flex-1"><div id="header"></div>
+<main class="p-4 sm:p-6 lg:p-8">
+    <div id="adminPageError" class="mb-6 hidden rounded-2xl border border-red-100 bg-red-50 p-4 text-sm font-semibold text-red-600"></div>
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div><h1 class="text-2xl font-extrabold">Borrowings</h1><p class="mt-1 text-xs text-gray-400">Monitor borrowing requests and intervene when needed.</p></div>
+        <div class="flex gap-2"><input id="adminBorrowingsSearch" type="search" placeholder="Search item or borrower..." class="rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm outline-none"><select id="adminBorrowingsStatus" class="rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm"><option value="">All statuses</option><option value="pending">Pending</option><option value="approved">Approved</option><option value="borrowed">Borrowed</option><option value="returned">Returned</option><option value="rejected">Rejected</option></select></div>
+    </div>
+    <div class="mt-6 overflow-hidden rounded-2xl bg-white shadow-sm"><div class="overflow-x-auto"><table class="w-full min-w-[1000px]"><thead class="bg-gray-50"><tr>
+        <th class="px-5 py-4 text-left text-xs text-gray-400">ID</th><th class="px-5 py-4 text-left text-xs text-gray-400">Item</th><th class="px-5 py-4 text-left text-xs text-gray-400">Owner</th><th class="px-5 py-4 text-left text-xs text-gray-400">Borrower</th><th class="px-5 py-4 text-left text-xs text-gray-400">Dates</th><th class="px-5 py-4 text-left text-xs text-gray-400">Status</th><th class="px-5 py-4 text-right text-xs text-gray-400">Admin action</th>
+    </tr></thead><tbody id="adminBorrowingsRows"><tr><td colspan="7" class="p-10 text-center text-sm text-gray-400">Loading borrowings...</td></tr></tbody></table></div></div>
+    <div class="mt-5 flex items-center justify-end gap-3"><button id="adminBorrowingsPrev" class="rounded-xl border bg-white px-4 py-2 text-xs font-bold disabled:opacity-40">Previous</button><span id="adminBorrowingsPage" class="text-xs text-gray-400"></span><button id="adminBorrowingsNext" class="rounded-xl border bg-white px-4 py-2 text-xs font-bold disabled:opacity-40">Next</button></div>
+</main></div></div>
+<script src="../assets/js/components.js"></script><script src="../assets/js/app.js"></script>
+<script>document.getElementById('sidebar').innerHTML=adminSidebar();document.getElementById('header').innerHTML=adminHeader('Borrowings');setupAdminBorrowings();</script>
+</body></html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account — Borrowly</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        violet: {
+                            50: "#f5f1ff",
+                            100: "#ebe3ff",
+                            500: "#7038f5",
+                            600: "#5e22e7",
+                            700: "#4d18c2"
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<main class="hero-gradient min-h-screen">
+    <div class="mx-auto grid min-h-screen max-w-6xl items-center gap-10 px-4 py-8 lg:grid-cols-2">
+        <section class="hidden lg:flex flex-col justify-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <span class="h-9 w-9 rounded-lg bg-violet-600 text-white flex items-center justify-center font-bold">B</span>
+                <span class="font-bold text-lg">Borrowly</span>
+            </a>
+
+            <div class="mt-4">
+                <p class="font-semibold text-violet-600">Join our community</p>
+                <h1 class="mt-2 max-w-md text-4xl font-extrabold leading-tight">Start sharing &<br>borrowing today</h1>
+                <p class="mt-4 max-w-md text-sm leading-6 text-gray-500">Create your account and discover useful items near you.</p>
+            </div>
+
+            <div class="mt-10 flex justify-center">
+                <img src="assets/images/borrowing.png" alt="Borrowing and sharing items" class="w-full max-w-lg object-contain">
+            </div>
+        </section>
+
+        <section class="mx-auto w-full max-w-md">
+            <div class="mb-6 flex items-center gap-2 lg:hidden">
+                <a href="index.html" class="flex items-center gap-2 font-bold">
+                    <span class="h-8 w-8 rounded-lg bg-violet-600 text-white flex items-center justify-center font-bold">B</span>
+                    Borrowly
+                </a>
+            </div>
+
+            <div class="rounded-3xl border border-gray-100 bg-white p-6 shadow-xl sm:p-8">
+                <h2 class="text-2xl font-extrabold">Create your account</h2>
+                <p class="mt-2 text-sm text-gray-400">Join people sharing useful things locally.</p>
+
+                <div id="signupError" class="mt-5 hidden rounded-xl border border-red-100 bg-red-50 px-4 py-3 text-sm text-red-600" role="alert"></div>
+
+                <form id="signupForm" class="mt-7">
+                    <label for="signupName" class="text-xs font-semibold">Full Name</label>
+                    <input id="signupName" required type="text" autocomplete="name"
+                           class="mt-2 mb-4 w-full rounded-xl border border-gray-200 px-4 py-3 text-sm outline-none focus:border-violet-400"
+                           placeholder="Enter your full name">
+
+                    <label for="signupEmail" class="text-xs font-semibold">Email</label>
+                    <input id="signupEmail" required type="email" autocomplete="email"
+                           class="mt-2 mb-4 w-full rounded-xl border border-gray-200 px-4 py-3 text-sm outline-none focus:border-violet-400"
+                           placeholder="Enter your email">
+
+                    <label for="signupPhone" class="text-xs font-semibold">Phone Number <span class="font-normal text-gray-400">(optional)</span></label>
+                    <input id="signupPhone" type="tel" autocomplete="tel"
+                           class="mt-2 mb-4 w-full rounded-xl border border-gray-200 px-4 py-3 text-sm outline-none focus:border-violet-400"
+                           placeholder="Enter your phone number">
+
+                    <label for="signupPassword" class="text-xs font-semibold">Password</label>
+                    <input id="signupPassword" required minlength="6" type="password" autocomplete="new-password"
+                           class="mt-2 mb-4 w-full rounded-xl border border-gray-200 px-4 py-3 text-sm outline-none focus:border-violet-400"
+                           placeholder="Create a password">
+
+                    <label for="signupPasswordConfirmation" class="text-xs font-semibold">Confirm Password</label>
+                    <input id="signupPasswordConfirmation" required minlength="6" type="password" autocomplete="new-password"
+                           class="mt-2 mb-5 w-full rounded-xl border border-gray-200 px-4 py-3 text-sm outline-none focus:border-violet-400"
+                           placeholder="Confirm your password">
+
+                    <label class="flex gap-2 text-xs text-gray-500">
+                        <input required type="checkbox" class="mt-0.5 accent-violet-600">
+                        I agree to the Terms of Service and Privacy Policy
+                    </label>
+
+                    <button id="signupSubmit" type="submit"
+                            class="mt-5 w-full rounded-xl bg-violet-600 py-3.5 text-sm font-bold text-white transition hover:bg-violet-700 disabled:cursor-not-allowed disabled:opacity-60">
+                        Sign Up
+                    </button>
+                </form>
+
+                <p class="mt-6 text-center text-xs text-gray-400">
+                    Already have an account?
+                    <a href="login.html" class="font-bold text-violet-600">Log in</a>
+                </p>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script src="assets/js/app.js"></script>
+<script>setupSignup();</script>
+</body>
+</html>

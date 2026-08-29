@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Items — Borrowly</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        violet: {
+                            50: "#f5f1ff",
+                            100: "#ebe3ff",
+                            500: "#7038f5",
+                            600: "#5e22e7",
+                            700: "#4d18c2"
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="min-h-screen flex flex-col bg-gray-50 pt-16">
+    <div id="navbar"></div>
+
+    <main class="mx-auto w-full max-w-7xl flex-1 px-4 py-8 sm:px-6">
+        <div class="mb-8">
+            <p class="text-xs font-bold uppercase tracking-widest text-violet-600">Marketplace</p>
+            <h1 class="mt-2 text-3xl font-extrabold">Browse items</h1>
+            <p class="mt-2 text-sm text-gray-500">Find useful things shared by people in your community.</p>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-[230px_1fr]">
+            <aside class="hidden self-start rounded-2xl border border-gray-100 bg-white p-5 shadow-sm lg:block">
+                <h3 class="font-bold">Categories</h3>
+                <div id="browseCategorySidebar" class="mt-4 space-y-1">
+                    <div class="rounded-xl bg-gray-50 px-3 py-2.5 text-sm text-gray-400">Loading categories...</div>
+                </div>
+            </aside>
+
+            <section class="min-w-0">
+                <div id="search"></div>
+
+                <div class="mt-5 flex flex-wrap gap-2">
+                    <select id="browseCategoryFilter" class="rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-violet-500 lg:hidden">
+                        <option value="">All Categories</option>
+                    </select>
+
+                    <select id="browseStatusFilter" class="rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-violet-500">
+                        <option value="">Any Status</option>
+                        <option value="available">Available</option>
+                        <option value="unavailable">Reserved</option>
+                        <option value="borrowed">Borrowed</option>
+                    </select>
+
+                    <select id="browseSortFilter" class="rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm outline-none focus:border-violet-500">
+                        <option value="newest">Newest</option>
+                        <option value="rating">Highest Rated</option>
+                        <option value="name">Name A–Z</option>
+                        <option value="oldest">Oldest</option>
+                    </select>
+                </div>
+
+                <div class="mt-7 flex items-center justify-between gap-4">
+                    <p id="browseCount" class="text-sm text-gray-500">Loading items...</p>
+                </div>
+
+                <div id="browseError" class="hidden mt-5 rounded-2xl border border-red-100 bg-red-50 p-4 text-sm text-red-600" role="alert"></div>
+
+                <div id="browseLoading" class="mt-5 rounded-2xl border border-gray-100 bg-white p-12 text-center text-sm text-gray-400 shadow-sm">
+                    Loading items...
+                </div>
+
+                <div id="itemsGrid" class="mt-5 hidden grid gap-5 sm:grid-cols-2 xl:grid-cols-3"></div>
+
+                <div id="browsePagination" class="mt-8 hidden items-center justify-center gap-3">
+                    <button id="browsePrevPage" type="button" class="rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 disabled:cursor-not-allowed disabled:opacity-40">
+                        ← Previous
+                    </button>
+                    <span id="browsePageLabel" class="text-sm text-gray-500"></span>
+                    <button id="browseNextPage" type="button" class="rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 disabled:cursor-not-allowed disabled:opacity-40">
+                        Next →
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        document.getElementById("navbar").innerHTML = navbar();
+        document.getElementById("footer").innerHTML = footer();
+        document.getElementById("search").innerHTML = searchBar();
+        setupBrowse();
+    </script>
+</body>
+</html>

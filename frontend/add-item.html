@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Item — Borrowly</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        violet: { 50: "#f5f1ff", 500: "#7038f5", 600: "#5e22e7", 700: "#4d1bc0" }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="min-h-screen bg-gray-50 pt-16 text-gray-900">
+    <div id="navbar"></div>
+
+    <main class="mx-auto max-w-4xl px-4 py-8 sm:px-6 sm:py-12">
+        <div class="mb-6 flex items-center gap-2 text-sm text-gray-500">
+            <a href="my-items.html" class="transition hover:text-violet-600">My Items</a>
+            <span>›</span>
+            <span id="breadcrumbLabel" class="font-medium text-gray-900">Add Item</span>
+        </div>
+
+        <div class="mb-8">
+            <h1 id="pageTitle" class="text-3xl font-extrabold sm:text-4xl">Add a New Item</h1>
+            <p id="pageDescription" class="mt-2 text-gray-500">Share something you own with the Borrowly community.</p>
+        </div>
+
+        <div id="addItemError" class="mb-5 hidden rounded-2xl border border-red-100 bg-red-50 p-4 text-sm text-red-700"></div>
+
+        <section class="rounded-3xl border border-gray-100 bg-white p-5 shadow-sm sm:p-8">
+            <form id="addItemForm" class="space-y-7">
+                <div>
+                    <label for="itemName" class="mb-2 block text-sm font-semibold text-gray-700">Item Name</label>
+                    <input id="itemName" name="name" type="text" maxlength="255" required
+                           placeholder="e.g. Canon EOS 90D"
+                           class="w-full rounded-xl border border-gray-200 px-4 py-3 outline-none transition focus:border-violet-500 focus:ring-2 focus:ring-violet-500">
+                </div>
+
+                <div>
+                    <label for="category" class="mb-2 block text-sm font-semibold text-gray-700">Category</label>
+                    <select id="category" name="category_id" required
+                            class="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-700 outline-none transition focus:border-violet-500 focus:ring-2 focus:ring-violet-500">
+                        <option value="">Loading categories...</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="description" class="mb-2 block text-sm font-semibold text-gray-700">Description</label>
+                    <textarea id="description" name="description" rows="5" required
+                              placeholder="Describe your item and anything borrowers should know..."
+                              class="w-full resize-none rounded-xl border border-gray-200 px-4 py-3 outline-none transition focus:border-violet-500 focus:ring-2 focus:ring-violet-500"></textarea>
+                    <p class="mt-2 text-xs text-gray-400">Give borrowers enough information to understand your item.</p>
+                </div>
+
+                <div class="grid gap-5 sm:grid-cols-2">
+                    <div>
+                        <label for="condition" class="mb-2 block text-sm font-semibold text-gray-700">Condition</label>
+                        <select id="condition" name="condition" required
+                                class="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-700 outline-none transition focus:border-violet-500 focus:ring-2 focus:ring-violet-500">
+                            <option value="excellent">Excellent</option>
+                            <option value="good" selected>Good</option>
+                            <option value="fair">Fair</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="location" class="mb-2 block text-sm font-semibold text-gray-700">Location</label>
+                        <input id="location" name="location" type="text" maxlength="255" required
+                               placeholder="e.g. Ramallah"
+                               class="w-full rounded-xl border border-gray-200 px-4 py-3 outline-none transition focus:border-violet-500 focus:ring-2 focus:ring-violet-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="itemImage" class="mb-2 block text-sm font-semibold text-gray-700">Item Photo <span class="font-normal text-gray-400">(optional)</span></label>
+                    <div class="grid gap-4 sm:grid-cols-[180px_1fr] sm:items-center">
+                        <div class="overflow-hidden rounded-2xl border border-dashed border-gray-200 bg-gray-50">
+                            <img id="imagePreview" src="https://placehold.co/500x350?text=Item+Photo" alt="Item preview" class="h-36 w-full object-cover">
+                        </div>
+                        <div>
+                            <input id="itemImage" name="image" type="file" accept="image/jpeg,image/png,image/gif,image/webp"
+                                   class="block w-full text-sm text-gray-500 file:mr-4 file:rounded-xl file:border-0 file:bg-violet-50 file:px-4 file:py-2.5 file:font-semibold file:text-violet-700 hover:file:bg-violet-100">
+                            <p id="imageHelp" class="mt-2 text-xs leading-5 text-gray-400">JPG, PNG, GIF, or WebP. Maximum 2 MB.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-100 pt-6">
+                    <div class="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+                        <a href="my-items.html" class="w-full rounded-xl border border-gray-200 bg-white px-6 py-3 text-center font-semibold text-gray-700 transition hover:bg-gray-50 sm:w-auto">Cancel</a>
+                        <button id="addItemSubmit" type="submit"
+                                class="w-full rounded-xl bg-violet-600 px-7 py-3 font-semibold text-white shadow-sm transition hover:bg-violet-700 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto">
+                            Add Item
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <div class="mt-6 flex items-start gap-3 rounded-2xl border border-violet-100 bg-violet-50 p-4">
+            <div class="text-lg text-violet-600">💡</div>
+            <div>
+                <p class="text-sm font-semibold text-violet-900">Share responsibly</p>
+                <p class="mt-1 text-sm text-violet-700">Make sure the item is available and in the condition you described before listing it.</p>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        document.getElementById("navbar").innerHTML = navbar();
+        document.getElementById("footer").innerHTML = footer();
+        setupAddItem();
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites — Borrowly</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        violet: { 50: "#f5f1ff", 100: "#ebe3ff", 500: "#7038f5", 600: "#5e22e7", 700: "#4d18c2" }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="min-h-screen bg-gray-50 pt-16 text-gray-900">
+    <div id="navbar"></div>
+
+    <main class="mx-auto min-h-[calc(100vh-12rem)] w-full max-w-7xl px-4 py-10 sm:px-6">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-violet-600">Saved for later</p>
+                <h1 class="mt-2 text-3xl font-extrabold">My Favorites</h1>
+                <p class="mt-2 text-sm text-gray-500">Keep track of items you may want to borrow.</p>
+            </div>
+            <p id="favoritesCount" class="text-sm text-gray-500">Loading favorites...</p>
+        </div>
+
+        <div id="favoritesError" class="mt-7 hidden rounded-2xl border border-red-100 bg-red-50 p-4 text-sm text-red-600" role="alert"></div>
+
+        <div id="favoritesLoading" class="mt-7 rounded-2xl border border-gray-100 bg-white p-12 text-center text-sm text-gray-400 shadow-sm">
+            Loading favorites...
+        </div>
+
+        <div id="favoritesGrid" class="mt-7 hidden grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
+
+        <div id="favoritesPagination" class="mt-8 hidden items-center justify-center gap-3">
+            <button id="favoritesPrevPage" type="button" class="rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 disabled:cursor-not-allowed disabled:opacity-40">
+                ← Previous
+            </button>
+            <span id="favoritesPageLabel" class="text-sm text-gray-500"></span>
+            <button id="favoritesNextPage" type="button" class="rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 disabled:cursor-not-allowed disabled:opacity-40">
+                Next →
+            </button>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        document.getElementById("navbar").innerHTML = navbar();
+        document.getElementById("footer").innerHTML = footer();
+        setupFavorites();
+    </script>
+</body>
+</html>
